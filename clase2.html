@@ -36,6 +36,7 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 310px;
+            justify-items: center;
         }
 
         .logo{
@@ -60,25 +61,32 @@
             text-align: center;
         }
 
-        .form{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .label{
-            font-size: var(--sm);
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        .input{
+        .email-image{
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
             background-color: var(--text-input-field);
-            border: none;
-            border-radius: 8px;
-            height: 32px;
-            font-size: var(--md);
-            padding: 4px;
-            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .email-image img{
+            width: 80px;
+        }
+
+        .resend{
+            font-size: var(--sm);
+        }
+
+        .resend span{
+            color: var(--very-light-pink);
+        }
+
+        .resend a{
+            color: var(--hospital-green);
+            text-decoration: none;
         }
 
         .primary-button{
@@ -111,18 +119,19 @@
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <h1 class="title">Crea una nueva contraseña</h1>
-            <p class="subtitle">Ingresa una nueva contraseña para tu cuenta</p>
+            <h1 class="title">¡El correo ha sido enviado!</h1>
+            <p class="subtitle">Por favor revisa tu bandeja de entrada donde se te enviaron las instrucciones para cambiar tu contraseña</p>
 
-            <form action="/" class="form">
-                <label for="password" class="label">Contraseña</label>
-                <input type="password" id="password" placeholder="*********" class="input input-password">
+            <div class="email-image">
+                <img src="./icons/email.svg" alt="email">
+            </div>
 
-                <label for="new-password" class="label">Repetir contraseña</label>
-                <input type="password" id="new-password" placeholder="*********" class="input input-password">
+            <button class="primary-button login-button">Login</button>
 
-                <input type="submit" value="Confirmar" class="primary-button login-button">
-            </form>
+            <p class="resend">
+                <span>¿No recibiste el correo?</span>
+                <a href="/">Reenviar</a>
+            </p>
         </div>
     </div>
 </body>
